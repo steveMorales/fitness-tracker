@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "@/lib/mongoDB";
+import { connectDB } from "@/lib/mongodb";
 import Meal from "@/models/Meal";
 import { getServerSession } from "next-auth";
 
