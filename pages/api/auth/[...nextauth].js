@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 
-export default NextAuth({
+export const authOptions = {
   session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,
 
@@ -34,4 +34,6 @@ export default NextAuth({
       return session;
     }
   }
-});
+};
+
+export default NextAuth(authOptions);

@@ -5,11 +5,9 @@ import { useSession } from "next-auth/react";
 export default function DashboardPage() {
   const { data: session, status } = useSession();
 
-  // Show a loading state while session is being fetched
   if (status === "loading") return <p>Loading...</p>;
-
-  // Show a message if user is not logged in
-  if (!session || !session.user) return <p>You must be logged in to view your dashboard.</p>;
+  if (!session || !session.user)
+    return <p>You must be logged in to view your dashboard.</p>;
 
   return (
     <div className="p-6">
@@ -18,4 +16,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
